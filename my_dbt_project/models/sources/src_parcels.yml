@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Raw parcel data sourced from the GRM_Main database on AsTxDBProd.
+    database: GRM_Main
+    schema: dbo
+    tables:
+      - name: parceltableview
+        description: Parcel master view containing active and historical parcel records.

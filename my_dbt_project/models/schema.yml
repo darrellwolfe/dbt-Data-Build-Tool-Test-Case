@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_parcels
+    description: Main parcel dimension enriched with district and PIN city classifications.
+    columns:
+      - name: lrsn
+        description: Unique parcel record identifier.
+        tests:
+          - not_null
+          - unique
+      - name: pin
+        description: Parcel identification number.
+        tests:
+          - not_null
+      - name: district
+        description: District classification derived from the neighborhood code.
+        tests:
+          - not_null
+      - name: pin_city
+        description: City or jurisdiction classification derived from the parcel PIN prefix.
+        tests:
+          - not_null
+
+  - name: fct_parcels_summary
+    description: Parcel counts summarized by district and PIN city.
